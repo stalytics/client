@@ -1,0 +1,36 @@
+<% @title = 'Steam Price API Client' %>
+
+<div class="container">
+  <div class="card-columns">
+    <% @items.each do |item| %>
+      <div class="card text-center" style="width: 20rem;">
+        <img class="card-img-top" src="https://steamcommunity-a.akamaihd.net/economy/image/<%= item['icon_url'] %>" alt="<%= item['market_hash_name'] %>">
+        <div class="card-body">
+          <h4 class="card-title"><%= item['market_hash_name'] %></h4>
+          <p class="card-text"></p>
+          <div class="card-footer bg-transparent border-success"><%= item['amount'] %> <%= item['currency'] %></div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item <%= "disabled" if @prev.nil? %>">
+        <a class="page-link " href="?page=<%= @prev %>" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <!--<li class="page-item"><a class="page-link" href="#">1</a></li>-->
+      <!--<li class="page-item"><a class="page-link" href="#">2</a></li>-->
+      <!--<li class="page-item"><a class="page-link" href="#">3</a></li>-->
+      <li class="page-item <%= "disabled" if @next.nil? %>">
+        <a class="page-link" href="?page=<%= @next %>" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>

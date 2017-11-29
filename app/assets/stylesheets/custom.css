@@ -1,0 +1,24 @@
+.card > img {
+    max-width: 200px;
+}
+.card {
+    height: 350px;
+    padding: 10px;
+}
+.card-body {
+    /*height: 100px;*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+}
+
+.card-body > .card-footer {
+    /*flex-grow: 1;*/
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+}
+
+nav {
+    margin-bottom: 30px;
+}
